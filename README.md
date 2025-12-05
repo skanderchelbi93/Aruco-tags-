@@ -20,5 +20,21 @@ ros2 launch realsense2_camera rs_launch.py depth_module.depth_profile:=1280x720x
 ```
 2. then in new Terminal launch the aruco Tag detector launch file
 ```bash
-ros2 launch opencv_tools opencv_tools  
+ros2 launch opencv_tools opencv_tools aruco_marker_pose_estimation_d435
 ```
+if u want to launch with normal camera:
+do calibration first using the chesse.png file in the main (after u print the file):
+```bash
+python3 camera_calibration.py
+```
+then launch:
+```bash
+ros2 launch opencv_tools opencv_tools aruco_marker_pose_estimation_tf
+```
+to generate Aruco tag:
+```bash
+python3 generate.py 
+```
+## As idea Source:
+this website was used :
+https://automaticaddison.com/how-to-publish-tf-between-an-aruco-marker-and-a-camera/
