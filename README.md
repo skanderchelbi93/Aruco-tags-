@@ -1,6 +1,7 @@
 # Aruco-tags
 1. Clone this github
-2. Build project 
+2. Build project
+PS: Path is where the github repo is cloned.
 ```bash
 cd {Path}/Aruco-tags-/
 colcon build
