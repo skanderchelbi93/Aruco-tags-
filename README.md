@@ -4,7 +4,7 @@
 PS: Path is where the github repo is cloned.
 ```bash
 cd {Path}/Aruco-tags-/
-colcon build
+colcon build --symlink-install
 ```
 3. Build librealsense2 package 
 
@@ -16,11 +16,12 @@ colcon build --packages-select librealsense2 --cmake-args -DBUILD_EXAMPLES=OFF -
 for Intel Depth Camera launch:
 1. launch camera launch file in Terminal:
 ```bash
-ros2 launch realsense2_camera rs_launch.py
+source install/setup.bash
 ros2 launch realsense2_camera rs_launch.py depth_module.depth_profile:=1280x720x30 pointcloud.enable:=true
 ```
 2. then in new Terminal launch the aruco Tag detector launch file
 ```bash
+source install/setup.bash
 ros2 launch opencv_tools opencv_tools aruco_marker_pose_estimation_d435
 ```
 if u want to launch with normal camera:
